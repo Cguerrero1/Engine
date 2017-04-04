@@ -31,7 +31,7 @@ public class DisplayObject {
 
     int width;
 
-    public void dispathEvent (Even)
+    public void dispathEvent (Even a)
 
 
 
