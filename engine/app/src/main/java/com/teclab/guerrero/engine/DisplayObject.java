@@ -12,6 +12,29 @@ public class DisplayObject {
     public DisplayObject parent;
     public Resources resources;
 
+    int heinght;
+    float opacity;
+
+    DisplayObject parent;
+
+    int pivotX;
+    int pivotY;
+
+    int rotation;
+
+    float scaleX;
+    float scaleY;
+
+    Transformations transformation;
+
+    boolean visible;
+
+    int width;
+
+    public void dispathEvent (Even)
+
+
+
     public DisplayObject(Resources resources){
         this.resources = resources;
     }
