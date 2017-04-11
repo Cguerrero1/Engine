@@ -39,7 +39,7 @@ public class DisplayObject {
         this.resources = resources;
     }
 
-    public void onDraw(Canvas canvas){
+    public void onDraw(){
         this.update();
     }
 

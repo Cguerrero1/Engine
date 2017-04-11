@@ -10,24 +10,45 @@ import java.util.HashMap;
  */
 public class Resources {
 
-    private GameView view;
-    private HashMap<String,Bitmap> pool;
-
-    public Resources(GameView view){
-        this.view = view;
-        pool  = new HashMap<String, Bitmap>();
+ public HasMap texturePool;
+    public SoundManager sounds;
+    public Context mContext;
+    public  int fps;
+    public Canvas canvas;
+    public PointF aspect;
+    public String hasKey;
+    public Resources(Context _context)
+    {
+        fps =32;
+        haskey="";
+        mContext= _context;
+        texturePool = new HasMap();
+        sound = new SoundManager(_context);
     }
-
-    public Bitmap getBmp(String resource){
-        if(!this.pool.containsKey(resource)){
-            this.pool.put(resource, BitmapFactory.decodeResource(this.view.getResources(),this.view.getResources().getIdentifier(resource , "drawable", this.view.getContext().getPackageName())));
+    public void loadTexture(String key, int resource)
+    {
+        if(!texturePool.contaisnKey(key))
+        {
+            Bitmap bmp=null;
+            bmp=BitmapFactory.decodeResource(mContext.getRresources(), resource);
+            texturePool.put(key, bmp);
         }
+    }
+    public void unloadTexture(String Key)
+    {
+        ((Bitmap)texturePool.get(key)).recycle();
+        texturePool.remove(key);
 
-        return this.pool.get(resource);
+    }
+    public Bitmap getTexture(String key)
+    {
+        return (Bitmap)texturePool.get(key);
+
+    }
+    public boolean isOnline()
+    {
+        ConnectivityManager cm= (ConnectivityManager)mContext.getSystemService
     }
 
-    public Bitmap removeBmp(String resource){
-        return this.pool.remove(resource);
-    }
 
 }
