@@ -1,17 +1,24 @@
 package com.teclab.guerrero.engine;
 
-
 /**
- * Created by Heat on 01/11/2016.
+ * Created by Alumno on 11/04/2017.
  */
+
 public class Event {
+    public Event(String _type){
+        type = _type;
+    }
 
-    EventDispatcher currentTarget;
+    public Event(String _type, Object _data){
 
-    Objesct data;
+        type = _type;
+        data = _data;
+    }
 
-    EventDispatcher target;
-
-    String Type;
-
+    public EventDispatcher currentTarget;
+    public EventDispatcher target;
+    public String type;
+    public Object data;
 }
+
+
